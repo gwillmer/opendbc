@@ -376,25 +376,25 @@ BO_ 941 NEW_MSG_3ad: 8 XXX
 BO_ 500 ACC_2: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
- SG_ ACC_AVAILABLE : 20|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_ENABLED : 21|1@0+ (1,0) [0|1] "" XXX
  SG_ BRAKE_WARN : 39|1@0+ (1,0) [0|1] "" XXX
  SG_ COLLISION_BRK_PREP : 48|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_BRK_PREP : 49|1@0+ (1,0) [0|1] "" XXX
  SG_ COMMAND_TYPE_2 : 50|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_STOP : 5|1@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_2 : 35|4@0+ (1,0) [0|15] "" XXX
  SG_ COMMAND_TYPE : 38|3@0+ (1,0) [0|7] "" XXX
  SG_ ACC_GO_HOLD : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_GO_PREP : 6|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_ACCEL_CMD : 3|12@0+ (0.004885,-10) [0|255] "" XXX
+ SG_ ACC_AVAILABLE : 20|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_2 : 35|4@0+ (1,0) [0|15] "" XXX
+ SG_ ACC_DECEL_CMD : 19|12@0+ (0.004885,-16) [0|255] "m/s2" XXX
 
 BO_ 502 OP_ACC_2: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ ACC_STOP : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_GO : 6|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_DECEL_CMD : 19|12@0+ (0.004885,-16) [-16|4] "m/s2" XXX
  SG_ ACC_AVAILABLE : 20|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_ENABLED : 21|1@0+ (1,0) [0|1] "" XXX
  SG_ BRAKE_WARN : 39|1@0+ (1,0) [0|1] "" XXX
@@ -402,6 +402,7 @@ BO_ 502 OP_ACC_2: 8 XXX
  SG_ ACC_BRK_PREP : 49|1@0+ (1,0) [0|1] "" XXX
  SG_ COMMAND_TYPE_2 : 50|0@0+ (1,0) [0|3] "" XXX
  SG_ COMMAND_TYPE : 38|3@0+ (1,0) [0|7] "" XXX
+ SG_ ACC_DECEL_CMD : 19|12@0+ (0.004885,-16) [-16|4] "m/s2" XXX
 
 BO_ 625 ACC_1: 8 XXX
  SG_ ACC_ENG_REQ : 39|1@0+ (1,0) [0|1] "" XXX
@@ -410,7 +411,7 @@ BO_ 625 ACC_1: 8 XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
  SG_ ACC_TORQ : 38|15@0+ (1,-7767) [-7767|24999] "NM" XXX
- SG_ ACC_REQ_KPH : 31|8@0+ (1,0) [0|255] "" XXX
+ SG_ VELO_REQ : 31|8@0+ (0.277778,0) [0|255] "m/s" XXX
 
 BO_ 626 OP_ACC_1: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
@@ -526,7 +527,7 @@ CM_ SG_ 500 COMMAND_TYPE "0-NONE; 1-ACC; 2-COLLISION";
 CM_ SG_ 500 ACC_GO_HOLD "inverse of command type";
 CM_ SG_ 625 ACC_ENG_REQ "seems like this bit goes on when ACC is asking for engine";
 CM_ SG_ 625 ACC_TORQ "seems like wheel torquest request(PHEV only?)";
-CM_ SG_ 625 ACC_REQ_KPH "leads";
+CM_ SG_ 625 VELO_REQ "leads";
 CM_ SG_ 268 BRAKE_PERHAPS "triggers only on ACC braking";
 CM_ SG_ 384 NEW_SIGNAL_1 "set in ACC gas driving. not set in electric human. not sure about gas human driving.";
 VAL_ 746 PRNDL 5 "L" 4 "D" 3 "N" 2 "R" 1 "P" ;
