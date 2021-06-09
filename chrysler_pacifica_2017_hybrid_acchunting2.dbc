@@ -130,11 +130,11 @@ BO_ 678 LKAS_HUD: 8 XXX
  SG_ LKAS_ICON_COLOR : 2|3@0+ (1,0) [0|3] "" XXX
  SG_ LKAS_LANE_LINES : 23|8@0+ (1,0) [0|1] "" XXX
  SG_ LKAS_ALERTS : 31|8@0+ (1,0) [0|1] "" XXX
- SG_ STEER_TYPE : 48|3@1+ (1,0) [0|3] "" XXX
  SG_ SETTINGS_1 : 12|3@0+ (1,0) [0|7] "" XXX
  SG_ SETTINGS_2 : 15|3@0+ (1,0) [0|31] "" XXX
  SG_ LKAS_CHIME_L : 40|1@0+ (1,0) [0|1] "" XXX
  SG_ LKAS_CHIME_R : 41|1@1+ (1,0) [0|3] "" XXX
+ SG_ STEER_TYPE : 48|3@1+ (1,0) [0|3] "" XXX
 
 BO_ 705 AUTO_PARK_BUTTON: 8 XXX
  SG_ AUTO_PARK_TOGGLE_2 : 8|1@0+ (1,0) [0|1] "" XXX
@@ -385,10 +385,10 @@ BO_ 500 ACC_2: 8 XXX
  SG_ COMMAND_TYPE : 38|3@0+ (1,0) [0|7] "" XXX
  SG_ ACC_GO_HOLD : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_GO_PREP : 6|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_ACCEL_CMD : 3|12@0+ (0.004885,-10) [0|255] "" XXX
  SG_ ACC_AVAILABLE : 20|1@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_2 : 35|4@0+ (1,0) [0|15] "" XXX
  SG_ ACC_DECEL_CMD : 19|12@0+ (0.004885,-16) [0|255] "m/s2" XXX
+ SG_ ACC_ACCEL_CMD : 3|12@0+ (0.004885,-10.0) [0|255] "" XXX
 
 BO_ 502 OP_ACC_2: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
@@ -525,6 +525,7 @@ CM_ SG_ 500 ACC_BRK_PREP "sometimes this flag goes high just before ACC decelera
 CM_ SG_ 500 COMMAND_TYPE_2 "0-NONE; 1- ACC; 2- COLLISION";
 CM_ SG_ 500 COMMAND_TYPE "0-NONE; 1-ACC; 2-COLLISION";
 CM_ SG_ 500 ACC_GO_HOLD "inverse of command type";
+CM_ SG_ 500 ACC_ACCEL_CMD "";
 CM_ SG_ 625 ACC_ENG_REQ "seems like this bit goes on when ACC is asking for engine";
 CM_ SG_ 625 ACC_TORQ "seems like wheel torquest request(PHEV only?)";
 CM_ SG_ 625 VELO_REQ "leads";
