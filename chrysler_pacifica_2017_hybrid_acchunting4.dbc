@@ -70,9 +70,9 @@ BO_ 284 BRAKE_1: 8 XXX
  SG_ STANDSTILL : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
+ SG_ VEHICLE_SPEED_KPH : 39|16@0+ (0.0078125,0) [0|511.984375] "kph" XXX
  SG_ BRAKE_VAL_TOTAL : 3|12@0+ (1,0) [0|255] "" XXX
  SG_ BRAKE_VAL_DRIVER : 18|11@0+ (1,0) [0|255] "" XXX
- SG_ VEHICLE_SPEED_KPH : 39|16@0+ (0.0078125,0) [0|511.984375] "kph" XXX
 
 BO_ 320 BRAKE_2: 8 XXX
  SG_ SPEED_RELATED_2 : 47|8@0+ (1,0) [0|63] "" XXX
@@ -337,6 +337,8 @@ BO_ 324 TRANS_1: 8 XXX
  SG_ GEAR_FINAL : 11|4@0+ (1,0) [0|1] "" XXX
  SG_ GEAR : 15|4@0+ (1,0) [0|1] "" XXX
  SG_ TRANS_SPEED : 31|16@0+ (0.01,0) [0|255] "m/s" XXX
+ SG_ NEW_SIGNAL_1 : 47|16@0+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_2 : 19|4@1+ (1,0) [0|15] "" XXX
 
 BO_ 501 DASHBOARD: 8 XXX
  SG_ ACC_DISP_MSG : 7|8@0+ (1,0) [0|1] "" XXX
@@ -393,14 +395,14 @@ BO_ 500 ACC_2: 8 XXX
  SG_ NEW_SIGNAL_2 : 35|4@0+ (1,0) [0|15] "" XXX
  SG_ BRAKE_WARN : 39|1@0+ (1,0) [0|1] "" XXX
  SG_ COLLISION_BRK_PREP : 48|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_BRK_PREP : 49|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_GO_HOLD : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_STOP : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ BRAKE_COMMAND_TYPE : 38|3@0+ (1,0) [0|7] "" XXX
- SG_ NEW_SIGNAL_1 : 4|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_GO_PREP : 6|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_DECEL_CMD : 19|12@0+ (0.004885,-16) [0|255] "m/s2" XXX
- SG_ ACC_ACCEL_CMD : 3|12@0+ (0.001,-2.05) [0|255] "" XXX
+ SG_ NEW_SIGNAL_1 : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ ACC_GO_HOLD : 7|1@0+ (1,0) [0|1] "" XXX
+ SG_ ACC_GO_PREP : 6|1@0+ (1,0) [0|1] "" XXX
+ SG_ ACC_ACCEL_CMD : 3|12@0+ (1,-2054) [0|255] "0" XXX
+ SG_ ACC_BRK_PREP : 49|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 502 OP_ACC_2: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
@@ -542,12 +544,12 @@ CM_ SG_ 908 INCREASING_MSB "time based";
 CM_ SG_ 500 COMMAND_TYPE_2 "0-NONE; 1- ACC; 2- COLLISION";
 CM_ SG_ 500 BRAKE_WARN "!!BRAKE!! warining";
 CM_ SG_ 500 COLLISION_BRK_PREP "seems to step brake before collision braking";
-CM_ SG_ 500 ACC_BRK_PREP "sometimes this flag goes high just before ACC deceleration";
-CM_ SG_ 500 ACC_GO_HOLD "1 when acc accelerating (or at least not braking)";
 CM_ SG_ 500 ACC_STOP "1 when at standstill after acc braking";
 CM_ SG_ 500 BRAKE_COMMAND_TYPE "0-NONE; 1-ACC; 2-COLLISION";
-CM_ SG_ 500 ACC_GO_PREP "from resume not initial gas";
+CM_ SG_ 500 ACC_GO_HOLD "1 when acc accelerating (or at least not braking)";
+CM_ SG_ 500 ACC_GO_PREP "when starting from standstill, not initial gas";
 CM_ SG_ 500 ACC_ACCEL_CMD "";
+CM_ SG_ 500 ACC_BRK_PREP "sometimes this flag goes high just before ACC deceleration";
 CM_ SG_ 625 zeros1 "constant zero";
 CM_ SG_ 625 ACC_PHEV_ENG_REQ "seems like this bit goes on when ACC is asking for engine (PHEV only)";
 CM_ SG_ 625 ACC_PHEV_TORQ "seems like wheel torquest request for PHEV only. Constant for ICE";
