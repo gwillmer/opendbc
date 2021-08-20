@@ -339,6 +339,8 @@ BO_ 324 TRANS_1: 8 XXX
  SG_ TRANS_SPEED : 31|16@0+ (0.01,0) [0|255] "m/s" XXX
  SG_ NEW_SIGNAL_1 : 47|16@0+ (1,0) [0|15] "" XXX
  SG_ NEW_SIGNAL_2 : 19|4@1+ (1,0) [0|15] "" XXX
+ SG_ SHIFTING : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_3 : 18|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 501 DASHBOARD: 8 XXX
  SG_ ACC_DISP_MSG : 7|8@0+ (1,0) [0|1] "" XXX
@@ -401,8 +403,8 @@ BO_ 500 ACC_2: 8 XXX
  SG_ NEW_SIGNAL_1 : 4|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_GO_HOLD : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_GO_PREP : 6|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_ACCEL_CMD : 3|12@0+ (1,-2054) [0|255] "0" XXX
  SG_ ACC_BRK_PREP : 49|1@0+ (1,0) [0|1] "" XXX
+ SG_ ACC_ACCEL_CMD : 3|12@0+ (1,0) [0|255] "0" XXX
 
 BO_ 502 OP_ACC_2: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
@@ -548,8 +550,8 @@ CM_ SG_ 500 ACC_STOP "1 when at standstill after acc braking";
 CM_ SG_ 500 BRAKE_COMMAND_TYPE "0-NONE; 1-ACC; 2-COLLISION";
 CM_ SG_ 500 ACC_GO_HOLD "1 when acc accelerating (or at least not braking)";
 CM_ SG_ 500 ACC_GO_PREP "when starting from standstill, not initial gas";
-CM_ SG_ 500 ACC_ACCEL_CMD "";
 CM_ SG_ 500 ACC_BRK_PREP "sometimes this flag goes high just before ACC deceleration";
+CM_ SG_ 500 ACC_ACCEL_CMD "";
 CM_ SG_ 625 zeros1 "constant zero";
 CM_ SG_ 625 ACC_PHEV_ENG_REQ "seems like this bit goes on when ACC is asking for engine (PHEV only)";
 CM_ SG_ 625 ACC_PHEV_TORQ "seems like wheel torquest request for PHEV only. Constant for ICE";
