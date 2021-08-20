@@ -337,10 +337,10 @@ BO_ 324 TRANS_1: 8 XXX
  SG_ GEAR_FINAL : 11|4@0+ (1,0) [0|1] "" XXX
  SG_ GEAR : 15|4@0+ (1,0) [0|1] "" XXX
  SG_ TRANS_SPEED : 31|16@0+ (0.01,0) [0|255] "m/s" XXX
- SG_ NEW_SIGNAL_1 : 47|16@0+ (1,0) [0|15] "" XXX
  SG_ NEW_SIGNAL_2 : 19|4@1+ (1,0) [0|15] "" XXX
  SG_ SHIFTING : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_3 : 18|1@0+ (1,0) [0|1] "" XXX
+ SG_ RPM_RELATED : 47|16@0+ (1,0) [0|15] "" XXX
 
 BO_ 501 DASHBOARD: 8 XXX
  SG_ ACC_DISP_MSG : 7|8@0+ (1,0) [0|1] "" XXX
