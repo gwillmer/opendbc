@@ -337,10 +337,15 @@ BO_ 324 TRANS_1: 8 XXX
  SG_ GEAR_FINAL : 11|4@0+ (1,0) [0|1] "" XXX
  SG_ GEAR : 15|4@0+ (1,0) [0|1] "" XXX
  SG_ TRANS_SPEED : 31|16@0+ (0.01,0) [0|255] "m/s" XXX
- SG_ NEW_SIGNAL_2 : 19|4@1+ (1,0) [0|15] "" XXX
  SG_ SHIFTING : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_3 : 18|1@0+ (1,0) [0|1] "" XXX
  SG_ RPM_RELATED : 47|16@0+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_4 : 20|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_5 : 19|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_1 : 3|5@1+ (1,0) [0|31] "" XXX
+ SG_ zero : 0|1@1+ (1,0) [0|3] "" XXX
+ SG_ also_zero : 1|1@1+ (1,0) [0|3] "" XXX
+ SG_ NEW_SIGNAL_2 : 20|3@0+ (1,0) [0|15] "" XXX
 
 BO_ 501 DASHBOARD: 8 XXX
  SG_ ACC_DISP_MSG : 7|8@0+ (1,0) [0|1] "" XXX
@@ -404,8 +409,7 @@ BO_ 500 ACC_2: 8 XXX
  SG_ ACC_GO_HOLD : 7|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_GO_PREP : 6|1@0+ (1,0) [0|1] "" XXX
  SG_ ACC_BRK_PREP : 49|1@0+ (1,0) [0|1] "" XXX
- SG_ ACC_ACCEL_CMD : 3|12@0+ (0.001,-2.0) [0|255] "0" XXX
-
+ SG_ ACC_ACCEL_CMD : 3|12@0+ (0.004,-8) [0|255] "0" XXX
 
 BO_ 502 OP_ACC_2: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
@@ -484,9 +488,24 @@ BO_ 55 NEW_MSG_2: 8 XXX
 
 BO_ 504 TESTING_ACC_2: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
- SG_ ACC_ACCEL_CMD : 3|12@0+ (0.001,-2.0) [0|255] "" XXX
- SG_ ACC_ACCEL_CMD_GR : 19|12@0+ (0.001,-2.0) [0|255] "" XXX
- SG_ ACC_ACCEL_CMD_SC : 35|12@0+ (0.001,-2.0) [0|255] "" XXX
+ SG_ ACC_ACCEL_CMD : 3|12@0+ (0.001,-2) [0|255] "" XXX
+ SG_ ACC_ACCEL_CMD_SC : 35|12@0+ (0.001,-2) [0|255] "" XXX
+ SG_ ACC_ACCEL_CMD_GR : 19|12@0+ (0.004,-8) [0|255] "" XXX
+
+BO_ 799 NEW_MSG_3: 8 XXX
+ SG_ NEW_SIGNAL_5 : 55|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_6 : 54|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_7 : 53|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_8 : 52|1@0+ (1,0) [0|1] "" XXX
+ SG_ ACC_ACCEL_CMD : 7|12@0+ (1,0) [0|63] "" XXX
+ SG_ ACC_ACCEL_CMD_GR : 11|12@0+ (1,0) [0|4095] "" XXX
+ SG_ ACC_ACCEL_CMD_GRF : 31|12@0+ (1,0) [0|63] "" XXX
+ SG_ SWITCH_GR : 48|1@0+ (1,0) [0|1] "" XXX
+ SG_ ACC_ACCEL_CMD_GRC : 35|12@0+ (1,0) [0|4095] "" XXX
+ SG_ GEAR : 49|1@0+ (1,0) [0|1] "" XXX
+ SG_ GEAR_FINAL : 50|1@0+ (1,0) [0|1] "" XXX
+ SG_ SHIFTING : 51|1@0+ (1,0) [0|1] "" XXX
+
 
 
 
