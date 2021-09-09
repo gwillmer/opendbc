@@ -108,9 +108,9 @@ BO_ 264 ENGINE_RPM_HEV: 8 XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
  SG_ ENGINE_RPM : 7|16@0+ (1,0) [0|65535] "" XXX
- SG_ NEW_SIGNAL_3 : 35|12@0+ (0.25,-500) [0|1] "" XXX
  SG_ zeros : 39|4@0+ (1,0) [0|4095] "" XXX
  SG_ ENGINE_TORQUE : 23|16@0+ (0.25,-500) [0|65535] "Nm" XXX
+ SG_ TORQUE_DRIVER_MAYBE : 35|12@0+ (0.25,-500.0) [0|1] "" XXX
 
 BO_ 464 SEATBELT_STATUS: 8 XXX
  SG_ SEATBELT_DRIVER_UNLATCHED : 13|1@0+ (1,0) [0|1] "" XXX
@@ -214,12 +214,12 @@ BO_ 288 ACCEL_RELATED_120: 7 XXX
  SG_ COUNTER : 47|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 55|8@0+ (1,0) [0|255] "" XXX
  SG_ ACC_OVERRIDE : 31|1@0+ (1,0) [0|1] "" XXX
- SG_ GAS_ENGINE_RPM_MAYBE : 31|16@0+ (1,0) [0|65535] "" XXX
  SG_ NEW_SIGNAL_2 : 6|1@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_3 : 7|1@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_1 : 3|12@0+ (0.02931,-59) [0|255] "" XXX
  SG_ ACC_ENG_OK : 5|1@0+ (1,0) [0|1] "" XXX
- SG_ ACCEL : 23|8@0+ (0.4,0) [0|255] "" XXX
+ SG_ ACCEL : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ TORQUE T : 3|12@0+ (0.250,-500.0) [0|255] "" XXX
+ SG_ GAS_ENGINE_RPM_MAYBE : 31|16@0+ (0,-500) [0|65535] "" XXX
 
 BO_ 257 ACCEL_RELATED_101: 5 XXX
  SG_ ENERGY_OR_RPM : 31|8@0+ (1,0) [0|255] "" XXX
@@ -573,6 +573,7 @@ CM_ SG_ 320 BRAKE_PEDAL "1= PRESSED";
 CM_ SG_ 320 BRAKE_LIGHT "1 = braking";
 CM_ SG_ 792 TURN_SIGNALS "1=Left, 2=Right";
 CM_ SG_ 792 HIGH_BEAM_FLASH "use this for genericToggle";
+CM_ SG_ 264 TORQUE_DRIVER_MAYBE "partial torque from driver gas? zero during acc torque, though matches acc when driver is letting off brakes";
 CM_ SG_ 544 TORQUE_MOTOR_RAW "has larger range than TORQUE_MOTOR but ut seems biased";
 CM_ SG_ 658 COUNTER "each message increments, 0..f";
 CM_ SG_ 658 CHECKSUM "checksum calculated with https://gist.github.com/adhintz/94bf8d19b9075539f50172ab0fb24ba1";
@@ -592,9 +593,9 @@ CM_ SG_ 332 YAW_RATE "";
 CM_ SG_ 720 BLIND_SPOT_RIGHT "yellow triangle alert on side view mirror when a car is in your blind spot";
 CM_ SG_ 608 PARKSENSE_DISABLED "set if parksense is disabled";
 CM_ SG_ 729 LKAS_BUTTON_LED "0-OFF; 1-ON; 2-BLINK";
-CM_ SG_ 288 GAS_ENGINE_RPM_MAYBE "lags acceleration, perhaps gas engine";
-CM_ SG_ 288 NEW_SIGNAL_1 "maybe actual accel? matches acc2 except during override (goes high)";
 CM_ SG_ 288 ACCEL "matches carstate.gas";
+CM_ SG_ 288 TORQUE T "torque total? matches acc2 except during override (goes high) (old 0.02931, -59)";
+CM_ SG_ 288 GAS_ENGINE_RPM_MAYBE "lags acceleration, perhaps gas engine";
 CM_ SG_ 257 ENERGY_OR_RPM "perhaps energy consumption or RPMs";
 CM_ SG_ 571 CHECKSUM "standard checksum";
 CM_ SG_ 571 ACC_BUTTON_ON "ACC button is pressed";
