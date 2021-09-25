@@ -105,11 +105,11 @@ BO_ 792 STEERING_LEVERS: 8 XXX
  SG_ HIGH_BEAM_FLASH : 3|1@0+ (1,0) [0|3] "" XXX
 
 BO_ 264 ENGINE_RPM_HEV: 8 XXX
- SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
- SG_ ENGINE_RPM : 7|16@0+ (1,0) [0|65535] "" XXX
  SG_ zeros : 39|4@0+ (1,0) [0|4095] "" XXX
- SG_ ENGINE_TORQUE : 23|16@0+ (0.25,-500) [0|65535] "Nm" XXX
+ SG_ ENGINE_RPM : 7|16@0+ (1,0) [0|65535] "" XXX
+ SG_ ENGINE_TORQUE : 19|12@0+ (0.25,-500) [0|65535] "Nm" XXX
+ SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ TORQUE_DRIVER_MAYBE : 35|12@0+ (0.25,-500) [0|1] "" XXX
 
 BO_ 464 SEATBELT_STATUS: 8 XXX
@@ -186,7 +186,8 @@ BO_ 331 BRAKE_3: 8 XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_1 : 23|16@0+ (1,0) [0|65535] "" XXX
- SG_ NEW_SIGNAL_2 : 39|16@0+ (1,0) [0|65535] "" XXX
+ SG_ NEW_SIGNAL_3 : 32|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_2 : 47|8@0+ (0,0) [0|65535] "" XXX
 
 BO_ 608 PARKSENSE_SIGNAL: 8 XXX
  SG_ PARKSENSE_DISABLED : 34|1@0+ (1,0) [0|1] "" XXX
@@ -296,20 +297,21 @@ BO_ 291 AXLE_TORQ: 8 XXX
 BO_ 294 INERTIAL_SENSOR: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
- SG_ LONG_ACCEL : 19|12@0+ (0.02,-40.96) [0|2047] "m/s2" XXX
  SG_ YAW_RATE : 35|12@0+ (1,0) [0|4095] "" XXX
  SG_ LAT_ACCEL : 3|12@0+ (1,0) [0|4095] "" XXX
+ SG_ LONG_ACCEL : 19|12@0+ (0.02,-40.96) [0|2047] "m/s2" XXX
 
 BO_ 300 NEW_MSG_12C: 8 XXX
 
 BO_ 308 ACCEL_GAS_134: 8 XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
- SG_ NEW_SIGNAL_1 : 39|8@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_3 : 7|1@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_5 : 3|1@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_4 : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ PEDAL_COMP : 47|8@0+ (1,0) [0|127] "" XXX
+ SG_ NEW_SIGNAL_6 : 24|8@1+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_2 : 23|8@0+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_1 : 39|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 532 ENERGY_RELATED_214: 8 XXX
  SG_ NOISY_SLOWLY_DECREASING : 16|9@0+ (1,0) [0|255] "" XXX
@@ -347,9 +349,7 @@ BO_ 878 HEV_POWER_USE_36E: 8 XXX
  SG_ ENGINE_PWR : 49|10@0+ (1,0) [0|1023] "KW" XXX
 
 BO_ 324 TRANS_1: 8 XXX
- SG_ GEAR_FINAL : 11|4@0+ (1,0) [0|1] "" XXX
  SG_ GEAR : 15|4@0+ (1,0) [0|1] "" XXX
- SG_ SHIFTING : 2|1@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_3 : 18|1@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_4 : 20|1@0+ (1,0) [0|1] "" XXX
  SG_ NEW_SIGNAL_5 : 19|1@0+ (1,0) [0|1] "" XXX
@@ -364,6 +364,8 @@ BO_ 324 TRANS_1: 8 XXX
  SG_ RPM_RELATED : 43|12@0+ (1,0) [0|15] "" XXX
  SG_ NEW_SIGNAL_9 : 31|4@0+ (1,0) [0|15] "" XXX
  SG_ NEW_SIGNAL_10 : 23|3@0+ (1,0) [0|3] "" XXX
+ SG_ SHIFTING : 2|1@0+ (1,0) [0|1] "" XXX
+ SG_ GEAR_FINAL : 11|4@0+ (1,0) [0|1] "" XXX
 
 BO_ 501 DASHBOARD: 8 XXX
  SG_ ACC_DISP_MSG : 7|8@0+ (1,0) [0|1] "" XXX
@@ -468,7 +470,7 @@ BO_ 268 ESC_ACC_COPY: 8 XXX
  SG_ NEW_SIGNAL_2 : 3|12@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_3 : 23|16@0+ (1,0) [0|4095] "" XXX
  SG_ NEW_SIGNAL_1 : 7|4@0+ (1,0) [0|15] "" XXX
- SG_ NEW_SIGNAL_4 : 32|8@1+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_4 : 39|8@0+ (0,0) [0|255] "" XXX
 
 BO_ 384 NEW_MSG_180: 8 XXX
  SG_ NEW_SIGNAL_2 : 15|8@0+ (1,0) [0|255] "" XXX
@@ -507,16 +509,21 @@ BO_ 674 d_1: 8 XXX
  SG_ PROBABILITY : 15|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 280 NEW_MSG_1: 8 XXX
- SG_ NEW_SIGNAL_1 : 3|12@0+ (1,0) [0|65535] "" XXX
  SG_ NEW_SIGNAL_3 : 39|16@0+ (1,0) [0|255] "" XXX
- SG_ NEW_SIGNAL_4 : 7|4@0+ (1,0) [0|15] "" XXX
- SG_ NEW_SIGNAL_5 : 23|4@0+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_4 : 7|1@0+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_5 : 21|1@0+ (1,0) [0|15] "" XXX
  SG_ NEW_SIGNAL_6 : 48|4@1+ (1,0) [0|15] "" XXX
- SG_ NEW_SIGNAL_2 : 31|8@0+ (1,0) [0|63] "" XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|1] "" XXX
- SG_ NEW_SIGNAL_7 : 16|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_8 : 5|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_7 : 56|8@1+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_1 : 3|12@0+ (1,0) [0|65535] "" XXX
+ SG_ NEW_SIGNAL_2 : 19|12@0+ (.25,-500) [0|63] "" XXX
 
 BO_ 55 NEW_MSG_2: 8 XXX
+ SG_ NEW_SIGNAL_4 : 39|1@0+ (1,0) [0|1] "" XXX
+ SG_ NEW_SIGNAL_3 : 36|13@0+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_5 : 55|4@0+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_6 : 56|8@1+ (1,0) [0|255] "" XXX
 
 BO_ 504 TESTING_ACC_2: 8 XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
@@ -540,14 +547,16 @@ BO_ 799 NEW_MSG_3: 8 XXX
 
 BO_ 368 NEW_MSG_4: 8 XXX
 
-BO_ 416 GEAR_RATIO: 8 XXX
- SG_ z1 : 7|4@0+ (1,0) [0|31] "" XXX
+BO_ 416 GEAR_RATIO: 7 XXX
  SG_ c1 : 23|24@0+ (1,0) [0|65535] "" XXX
- SG_ GEAR_RATIO : 3|12@0+ (0.003115264798,0) [0|1] "" XXX
+ SG_ COUNTER : 47|4@0+ (1,0) [0|15] "" XXX
+ SG_ CHECKSUM : 55|8@0+ (1,0) [0|255] "" XXX
+ SG_ z1 : 7|5@0+ (1,0) [0|31] "" XXX
+ SG_ GEAR_RATIO : 2|11@0+ (0.01,0) [0|20.46] "" XXX
 
 BO_ 520 NEW_MSG_6: 8 XXX
  SG_ NEW_SIGNAL_2 : 18|1@0+ (1,0) [0|255] "" XXX
- SG_ NEW_SIGNAL_4 : 39|16@0+ (1,0) [0|65535] "" XXX
+ SG_ NEW_SIGNAL_4 : 47|8@0+ (1,0) [0|65535] "" XXX
  SG_ c : 7|16@0+ (1,0) [0|15] "" XXX
  SG_ NEW_SIGNAL_3 : 31|8@0+ (1,0) [0|255] "" XXX
 
@@ -620,9 +629,9 @@ CM_ SG_ 532 NOISY_SLOWLY_DECREASING "perhaps battery but do not know";
 CM_ SG_ 559 GAS_PEDAL_POS "Accel Pedal Position in %";
 CM_ SG_ 816 TRACTION_OFF "set when traction off button is enabled";
 CM_ SG_ 816 TOGGLE_PARKSENSE "sending 3000071ec0ff9000 enables or disables parksense";
-CM_ SG_ 324 GEAR_FINAL "R=11; D=1; N=0; P=13; ";
 CM_ SG_ 324 GEAR "R=11; D=1; N=0; P=13; ";
 CM_ SG_ 324 TRANS_SPEED "possible transmission output shift speed?";
+CM_ SG_ 324 GEAR_FINAL "R=11; D=1; N=0; P=13; ";
 CM_ SG_ 501 ACC_SET_SPEED_KPH "speed configured for ACC";
 CM_ SG_ 501 ACC_SET_SPEED_MPH "speed configured for ACC";
 CM_ SG_ 501 CRUISE_ICON "0,1 - off; 2.3.4,5-White + distance set; 8,9,10,11-Green + no lead + distance set; 12,13,14,15- Green + lead + distance set; 34-regularCC White;  40-regularCC Green";
