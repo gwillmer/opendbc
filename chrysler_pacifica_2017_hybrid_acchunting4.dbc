@@ -585,7 +585,6 @@ BO_ 680 TCM_2a8: 8 XXX
  SG_ NEW_SIGNAL_1 : 31|4@0+ (1,0) [0|15] "" XXX
  SG_ COUNTER : 55|4@0+ (1,0) [0|15] "" XXX
  SG_ zeros : 7|16@0+ (1,0) [0|65535] "" XXX
- SG_ CHECKSUM : 56|8@1+ (1,0) [0|255] "" XXX
 
 BO_ 672 PCM_2a0: 8 XXX
 
